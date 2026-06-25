@@ -61,7 +61,6 @@ def fetch_cfpb_page(date_min: str, date_max: str, frm: int = 0, size: int = 100)
         "has_narrative": "true",  # Only complaints with consumer narratives
         "size": size,
         "from": frm,  # Note: API uses "from", not "frm"
-        "sort": "date_received:asc"  # Oldest first
     }
     
     try:
@@ -250,11 +249,9 @@ if __name__ == "__main__":
     """
     
     # For testing: fetch data from the last 90 days
-    today = datetime.now()
-    ninety_days_ago = today - timedelta(days=90)
     
-    date_min = ninety_days_ago.strftime("%Y-%m-%d")
-    date_max = today.strftime("%Y-%m-%d")
+    date_min = "2024-01-01"
+    date_max = "2024-12-31"
     
     # For testing, limit to 3 pages (~300 records)
     # Once you verify it works, set limit_pages=None to fetch all

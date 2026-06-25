@@ -9,7 +9,9 @@ We'll look at:
 4. Temporal patterns (do complaints differ by time?)
 5. Construct the Resolution Difficulty Score (our regression target)
 """
-
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import pandas as pd
 from datetime import datetime
 from app.database import SessionLocal
